@@ -5,6 +5,7 @@ import Link from "next/link";
 const navLinks = [
   { name: "Inicio", href: "/#hero" },
   { name: "Contacto", href: "https://wa.me/50379870945" },
+  { name: "Materiales", href: "/futuro" },
 ]
 
 export default function Footer() {

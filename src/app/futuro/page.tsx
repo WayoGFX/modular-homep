@@ -7,6 +7,7 @@ export default function FuturePage() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1">
+        <FutureSection />
       </main>
       <Footer />
     </div>
