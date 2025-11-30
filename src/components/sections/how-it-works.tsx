@@ -4,6 +4,9 @@ import { AnimatedSection } from "@/components/animated-section"
 import { ModularHomeConfigurator } from "@/components/modular-home-configurator"
 import { FinancingSimulator } from "../financing-simulator"
 import Image from "next/image"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import FutureSection from "../sections/future"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
 const steps = [
   {
@@ -141,6 +144,26 @@ export default function HowItWorksSection() {
             </CardContent>
           </Card>
         </AnimatedSection>
+
+        <AnimatedSection className="mt-16">
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1" className="border-none">
+                <Card>
+                    <AccordionTrigger className="p-6 text-left w-full hover:no-underline">
+                        <CardHeader className="p-0 text-left w-full">
+                            <CardTitle className="font-headline text-2xl">Conoce el Futuro de la Construcción Modular</CardTitle>
+                            <CardDescription>
+                            Explora los materiales innovadores y las tecnologías que están redefiniendo la vivienda sostenible.
+                            </CardDescription>
+                        </CardHeader>
+                    </AccordionTrigger>
+                    <AccordionContent>
+                        <FutureSection />
+                    </AccordionContent>
+                </Card>
+            </AccordionItem>
+          </Accordion>
+        </AnimatedSection>
         
         <AnimatedSection className="mt-16">
           <Card>
@@ -149,15 +172,38 @@ export default function HowItWorksSection() {
                 <CardDescription>Una visualización de cómo los módulos se combinan para formar un hogar moderno y funcional.</CardDescription>
             </CardHeader>
             <CardContent>
-                 <div className="relative aspect-video w-full rounded-lg overflow-hidden">
-                    <Image 
-                        src="https://i.imgur.com/fjHm33R.jpeg" 
-                        alt="Visualización del proyecto Modular Home"
-                        fill
-                        className="object-cover"
-                        data-ai-hint="modern modular home"
-                    />
-                </div>
+                <Carousel className="w-full">
+                    <CarouselContent>
+                        <CarouselItem>
+                            <video className="w-full h-full aspect-video object-cover rounded-lg" controls>
+                                <source src="/mi-video.mp4" type="video/mp4" />
+                                Tu navegador no soporta el tag de video.
+                            </video>
+                        </CarouselItem>
+                        <CarouselItem>
+                            <div className="relative aspect-video w-full rounded-lg overflow-hidden">
+                                <Image 
+                                    src="https://i.imgur.com/fjHm33R.jpeg" 
+                                    alt="Visualización del proyecto Modular Home 1"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                            <div className="relative aspect-video w-full rounded-lg overflow-hidden">
+                                <Image 
+                                    src="/imgmodular.webp" 
+                                    alt="Visualización del proyecto Modular Home 2"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                        </CarouselItem>
+                    </CarouselContent>
+                    <CarouselPrevious className="ml-16" />
+                    <CarouselNext className="mr-16" />
+                </Carousel>
             </CardContent>
           </Card>
         </AnimatedSection>

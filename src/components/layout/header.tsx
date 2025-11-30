@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Menu } from "lucide-react"
+import { Logo } from "@/components/logo"
 
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -47,14 +48,14 @@ export default function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
-        isScrolled ? "bg-background/80 backdrop-blur-sm border-b border-border/50" : "bg-transparent"
+        isScrolled ? "bg-background/100 backdrop-blur-sm border-b border-border/50" : "bg-transparent"
       )}
     >
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex-shrink-0">
-             <Link href="/#hero" aria-label="Scroll to top" className="font-headline font-bold text-xl tracking-tight text-foreground" onClick={(e) => handleScrollTo('/#hero', e as any)}>
-                Modular Homes
+             <Link href="/#hero" aria-label="Scroll to top" onClick={(e) => handleScrollTo('/#hero', e as any)}>
+                <Logo />
             </Link>
           </div>
           <nav className="hidden md:flex md:space-x-8">
@@ -80,8 +81,8 @@ export default function Header() {
               <SheetContent side="left" className="bg-background">
                 <div className="flex flex-col h-full py-6">
                    <div className="mb-8">
-                    <Link href="/#hero" aria-label="Scroll to top" className="font-headline font-bold text-xl tracking-tight" onClick={(e) => handleScrollTo('/#hero', e as any)}>
-                      Modular Homes
+                    <Link href="/#hero" aria-label="Scroll to top" onClick={(e) => handleScrollTo('/#hero', e as any)}>
+                      <Logo />
                     </Link>
                   </div>
                   <nav className="flex flex-col space-y-4">

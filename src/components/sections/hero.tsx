@@ -9,14 +9,21 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative h-screen min-h-[700px] flex items-end justify-center text-center text-white pb-20 sm:pb-24">
-      <Image
-        src="https://i.imgur.com/Ehocf9i.jpeg"
-        alt="Modular Homes Logo Background"
-        fill
-        priority
-        className="object-contain"
-      />
+    <section id="hero" className="relative h-screen min-h-[700px] flex items-center justify-center text-center text-white">
+      {/* 
+        Reemplaza la URL en `src` con la ruta a tu video.
+        Ejemplo: Si tu video se llama `hero-video.mp4` y está en la carpeta `public`,
+        el `src` debería ser `"/hero-video.mp4"`.
+      */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        <source src="/mi-video.mp4" type="video/mp4" />
+      </video>
       <div className="absolute inset-0 bg-black/50" />
       <AnimatedSection className="relative z-10 px-4">
         <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl font-headline">
